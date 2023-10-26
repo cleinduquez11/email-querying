@@ -14,12 +14,12 @@
     </div>
 @endif
   <div class="container-lg">
-    <div class="row justify-content-center text-center">
-      <div class="col-8-md">
+    <div class="row justify-content-center text-center align-items-center">
+      <div class="col col-sm-6 ">
         <div class="card p-2">
           <div class="card-title">
             <h3 class="display-5">
-              Add Job Application
+              Query an Email
             </h3>
           </div>
           <div class="card-body">
@@ -31,16 +31,6 @@
         <input class="form-control my-2" type="text"  name="name" placeholder="eg. Your Name" value="{{old('name')}}">
         </div>
         
-<div class="form-control my-2">
-  <label for="position" class="form-label">Position</label>  
-   <input type="text" class="form-control my-2" value="{{ old('position') }}" name= "position" placeholder= "eg. Software Engineer">
-</div>
-
-<div class="form-control my-2">
-  <label for="company" class="form-label">Company</label>  
-   <input type="text" class="form-control my-2" value="{{ old('company') }}" name= "company" placeholder= "eg. Google">
-</div>
-
 <div class="form-control my-2">
   <label for="receiver" class="form-label">Receiver Email</label>  
    <input type="text" class="form-control my-2" value="{{ old('receiver') }}" name= "receiver" placeholder= "eg. Your Email">

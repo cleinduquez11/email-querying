@@ -15,7 +15,7 @@
 @endif
   <div class="container-lg">
     <div class="row justify-content-center text-center">
-      <div class="col-8-md">
+      <div class="col col-sm-6">
         <div class="card p-2">
           <div class="card-title">
             <h3 class="display-5">

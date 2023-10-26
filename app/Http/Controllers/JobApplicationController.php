@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\JobApplication;
+use App\Models\JobApplication1;
 class JobApplicationController extends Controller
 {
     /**
@@ -18,6 +19,7 @@ class JobApplicationController extends Controller
         
        );
     }
+
     
     public function create()
     {
@@ -31,12 +33,13 @@ class JobApplicationController extends Controller
     {
       $data = $request->validate([
         'name'=> 'required',
-        'position' => 'required',
-        'company' => 'required',
+        // 'position' => 'required',
+        // 'company' => 'required',
         'receiver' => 'required',
         'sender' => 'nullable'
         ]);
       $newJobApplication = JobApplication::create($data);
+      $newJobApplication1 = JobApplication1::create($data);
       
       
        return redirect(route('JobApplication.index'))->with(
@@ -65,7 +68,7 @@ class JobApplicationController extends Controller
     {
   $data = $request->validate([
         'name'=> 'required',
-        'position' => 'required',
+        // 'position' => 'required',
         'company' => 'required',
         'receiver' => 'required',
         'sender' => 'nullable'

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobApplicationController;
 use App\Models\JobApplication;
+use App\Models\JobApplication1;
 use Illuminate\Http\Request;
 
 
@@ -16,6 +17,17 @@ Route::get('/jobs', function(){
   
   return response()->json(["data" =>$data]);
 });
+
+
+Route::get('/database', function(){
+  $JobApplications = JobApplication1::orderby('id', 'DESC')->get();
+       
+  return view('database',
+ ['JobApplications' => $JobApplications]
+  
+ );
+});
+
 
 
 Route::get('/delete', function(){

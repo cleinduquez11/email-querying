@@ -13,9 +13,7 @@
      <div class="row justify-content-end">
        <div class="col-8-sm text-end">
         <span >
-    <a href="{{ route('JobApplication.create') }}" class="btn btn-success m-2  ">Add a Query Email</a>
-    <a href="/delete" class="btn btn-danger ">Delete all Query Email</a> 
-    <a href="/database" class="btn btn-primary ">Database</a> 
+
            </span>
            </span>
 
@@ -26,7 +24,7 @@
          <div class="card p-2">
            <div class="card-title">
              <h1 class="display-2">
-                    Querying Today
+                    DATABASE
              </h1>
 
            </div>
@@ -34,6 +32,9 @@
            <div class="card-body">
              <div class="table-responsive">
                <table class="table table-striped">
+               <th>
+                    Timestamp
+                  </th>
                   <th>
                     Name
                   </th>
@@ -57,6 +58,9 @@
                   </th>
                  @forelse($JobApplications as $JobApplication) 
                   <tr>
+                  <td>
+                   {{ $JobApplication->created_at }}
+                 </td> 
                  <td>
                    {{ $JobApplication->name }}
                  </td> 
@@ -73,14 +77,10 @@
                    {{ $JobApplication->sender}}
                  </td> 
                                           <td>
-                <a href="{{ route('JobApplication.edit',[$JobApplication]) }}" class="btn btn-primary">edit</a>
+             
                  </td> 
                  <td>
-                   <form action="{{ route('JobApplication.destroy', $JobApplication) }}" method="post">
-                     @csrf
-                     @method('delete')
-                     <input class="btn btn-danger" type="submit" value="Delete">
-                   </form>
+                 
                  </td>
 
                   </tr>
@@ -89,7 +89,7 @@
        <tr>
 
          <td colspan="4">
-                         <p>Nothing to query</p>
+                         <p>No users</p>
                  </td>
                   
        </tr>

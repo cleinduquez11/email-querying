@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_applications', function (Blueprint $table) {
+        Schema::create('job_application1s', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('receiver');
@@ -19,10 +19,9 @@ return new class extends Migration
             $table->timestamp('updated_at');
             $table->timestamp('created_at');
             
-        });    
-    }   
-    // $table->string('company');
- // $table->string('position');
+        });
+    }
+
     /**
      * Reverse the migrations.
      */
